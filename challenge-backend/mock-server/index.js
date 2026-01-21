@@ -78,7 +78,6 @@ const eventStore = {
 };
 
 
-// Provide the server-side API with the request handlers.
 const server = setupServer(
   http.get('http://event.com/getUsers', () => {
     if (Math.random() < 0.05) {
@@ -93,7 +92,6 @@ const server = setupServer(
   
   http.post('http://event.com/addEvent', async ({request}) => {
     requestCount++
-    // Simulate a successful response for the first 5 requests
     if (requestCount <= 5 || requestCount == 0) {
       const requestBody = await request.json()
       eventStore.addEvent(requestBody);
@@ -102,7 +100,6 @@ const server = setupServer(
         success: true
       });
     } 
-    // Then fail for the next 10 requests
     else {
       if (requestCount >= 15) {
         requestCount = 0;
@@ -130,7 +127,6 @@ const server = setupServer(
 )
 
 const listenMock = () => {
-  // Start the interception.
   server.listen()
 }
 
