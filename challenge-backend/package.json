@@ -1,0 +1,23 @@
+{
+  "name": "challenge-backend",
+  "version": "1.0.0",
+  "main": "services/index.js",
+  "scripts": {
+    "start": "node services",
+    "dev": "node --watch services",
+    "lint": "eslint .",
+    "format": "prettier -w .",
+    "test": "node --test"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "Event Management System (Fastify) coding challenge",
+  "dependencies": {
+    "fastify": "^4.28.0",
+    "msw": "^2.7.3"
+  },
+  "devDependencies": {
+    "eslint": "^9.18.0",
+    "prettier": "^3.4.2"
+  }
+}
